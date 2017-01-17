@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/app.css')
+    link(rel='stylesheet', href='/stylesheets/foundation.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/stickyfoot.css')
+  
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    script(src='javascripts/main.js')
+    
+  
+  body
+    block content
+
+    script(src='javascripts/foundation.min.js')
+    script(src='javascripts/app.js')
+    
+
+  footer(class='stickyfooter')
+    div(class='container')
+      p We created this thing because we're awesome.

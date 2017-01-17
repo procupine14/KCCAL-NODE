@@ -1,0 +1,97 @@
+extends layout
+
+block content
+  h1.text-center=title
+  div(class='container')
+    br
+    br
+    form(method='post')
+      div(class='form-group')
+        input(type='text', class='form-control', name='name', id='name', placeholder='Your Name')
+      div(class='form-group')
+        input(type='text', class='form-control', name='email', id='email', placeholder='Email')
+      div(class='form-group')
+        input(type='text', class='form-control', name='phone', id='phone', placeholder='Phone')
+      div(class='form-group')
+        p What "Collection Zone" do you live in?
+      div(class='form-group')
+        input(type='radio', name='zone', value='North Zone' id='North')
+        |  North 
+        input(type='radio', name='zone', value='Central Zone' id='Central')
+        |  Central 
+        input(type='radio', name='zone', value='South Zone' id='South')
+        |  South 
+        br
+        p
+          a(href='#', data-open='LocationMapModal')='Help me Choose!'
+      div(class='form-group')
+        p Please select your normal trash day:
+        input(type='radio', name='trashday', value='Monday', id='Monday')
+        |  Monday 
+        input(type='radio', name='trashday', value='Tuesday', id='Tuesday')
+        |  Tuesday 
+        input(type='radio', name='trashday', value='Wednesday', id='Wednesday')
+        |  Wednesday 
+        input(type='radio', name='trashday', value='Thursday', id='Thursday')
+        |  Thursday 
+        input(type='radio', name='trashday', value='Friday', id='Friday')
+        |  Friday 
+      div(class='form-group')
+        p What type of notifications do you want to receive?
+        div(class='container')
+          div(class='row')
+            div(class='col-med-1')
+              div(class='checkbox')
+                input(type='checkbox', class='checkbox', name='notifEmail', value='email', text='Email')
+                p Email
+            div(class='col-med-1') 
+              div(class='checkbox')
+                input(type='checkbox', class='checkbox', name='notifCalendar', value='email', text='Calendar')
+                p Calendar
+            div(class='col-med-1')
+              div(class='checkbox')
+                input(type='checkbox', class='checkbox', name='notifText', value='email', text='Text')
+                p Text(SMS)
+        div(class='form-group')
+          div(class='row')
+              button(class='btn btn-success', type='submit', text='Submit') Submit
+              button(class='btn btn-danger', type='reset') Reset
+      
+      
+    div(class='reveal large', id='LocationMapModal', data-reveal)
+      div(class='containermod')
+        div(class='row vertical-align')
+          div(class='col-sm-11')
+          div(class='col-sm-1 text-center')
+            button(class='close-button pull-right', data-close, aria-label='Close reveal', type='button')
+              span(aria-hidden='true')='X'
+        div(class='row vertical-align')
+          div(class='col-sm-12 text-center')
+            h1(id='modalTitle')='Zone Maps'
+             br
+        div(class='row vertical-align')
+          div(class='col-lg-8')
+            div(class='imgAbt')
+              a(href='#', onclick="zoneChoose('North Zone')", data-close, aria-label='Close reveal')
+                img(width='500', height='500', src='/images/NorthZone.png')
+              br
+          div(class='col-lg-4')
+            a(href='#', onclick="zoneChoose(this.innerHTML)", data-close, aria-label='Close reveal')='North Zone'
+        div(class='row-vertical-align')
+          div(class='col-lg-8')
+            div(class='imgAbt')
+              a(href='#', onclick="zoneChoose('Central Zone')", data-close, aria-label='Close reveal')
+                img(width='500', height='500', src='/images/CentralZone.png')
+              br
+          div(class='col-lg-4')
+            a(href='#', onclick="zoneChoose(this.innerHTML)", data-close, aria-label='Close reveal')='Central Zone'
+        div(class='row-vertical-align')
+          div(class='col-lg-8')
+            div(class='imgAbt')
+              a(href='#', onclick="zoneChoose('South Zone')", data-close, aria-label='Close reveal')
+                img(width='500', height='500', src='/images/SouthZone.png')
+              br
+          div(class='col-lg-4')
+            a(href='#', onclick="zoneChoose(this.innerHTML)", data-close, aria-label='Close reveal')='South Zone'
+
+
